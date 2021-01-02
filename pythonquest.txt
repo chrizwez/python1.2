@@ -55,3 +55,8 @@ Why would you use a class? ; If you need a template of keys ready to use
 How to create Class with def inside?; class Horus: def speak(self): print("I am {} and {}".format(self.name,self.doing)
 How do we create a constructor in a class?; class Horus:  def __init__(self, name, time):  self.name = name   self.time = time  def __str__: return self.name
 How do we add docstrings to our class/variables etc; """This can be put above/below code to explain and make more understandable your code"""
+How do we give a class within a class (animal sounds)?; class Animal: sound = ""   def speak(self): print("Sound")   class Piglet(Animal): sound = "Oink"  hamlet = Piglet("Ham") #inheritance
+How do we get only the keys or values of a dict?; dict.keys()   dict.values()
+How do we import random and create a random number between 1 and 10000?; import random    random.randint(1,10000)
+How do we show the current time/date/year?; import datetime   now = datetime.datetime.now()   print(now)   now.year   
+How do we see what date it would be in 20 days?; import datetime   now = datetime.datetime.now()   print(now + datetime.timedelta(days=28))
