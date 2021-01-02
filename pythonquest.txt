@@ -1,0 +1,57 @@
+How do you open a current/new text file?; variable = open("textfile.txt","a") a=amend/w=overwrite/r=read
+How do you write to an open text file?; variable.write() {Once opened in variable}
+How do you split a variable into multiple items in a container?; variable02 = variable.split(";")  or ("\n")
+How to print the contents of a text file in python?; variable = open("textfile.txt","r") print(variable.read())
+How do you pause during the execution of script?; import time    &    time.sleep(10)
+How do you structure a if else if and else?; if 1>2: print(1)     elif 2>1: print(2)      else: print(3)
+How do you create a dict?; variable = {"dog": "cat", "model":"new", "list": ["zebra", "wold", "wolf"] }
+How do you add (append) to a dict?; variable["next"] = "wonders"
+How do you create a container?; variable = []     or      ["dog","wolf","list"]
+How do you add (append) to a container(list)?; variable.append("houses") 
+How do you print a dict?; print(variable["firstDict"]   or print(variable["list"][3]) for a list item
+How do we print an item from a container/list?; print(variable[2])
+How do you generate random numbers?; from random import random      &    print(round(random())*10) 
+How do you print out each item in a list/container? ; fruits = ["apple","banana"]     for x in fruits:      print(x)
+How do you print out each letter of a word?; for x in "banana": print(x)
+How do you break a loop?; fruits = ["apple", "pear","tomato"]      for x in fruits:   print(x)  if x == "pear": break
+How do you execute only when a condition is staisfied? ; fruits = ["pear","apple","cherry"]   for x in fruits:  if x == "apple":   continue     print(x) #print is same level as IF statement
+How to print numbers until 5; for x in range(5):   print(x)
+How do you print the numbers from 4 to 9?; for x in range(4, 9): print(x)
+How do you print the numbers from 2 to 30, by increasing by 4?; for x in range(2, 30, 4): print x
+How do you distinquish your final loop run from the rest of the loop? ; for x in range(6): print(x)   else: print("Finally Finished!") #else_same_indent_as_for
+How do you structure an inner loop within an outerloop (using 2 arrays)?; adj = ["red","green"]  fruits = ["apple","pear"]   for x in adj: for y in fruits: print(x,y)
+How do you run a loop only when a condition is satisfied?; i = 1   while i<6: print(i)   i += 1
+How do we break a while loop even if statement is true?; i = 1   while i<6: print(i)    if i == 3: break   i += 1
+How do we skip a loop (while)?; i = 0   while i<6: i += 1    if i == 3: continue #skip   print(i)
+Create an Array; cars = ["Toyota","Ford","Nissan"]
+Count the number of items in an array; x = len(cars)   #cars = ["Toyota","Ford"]
+How do we remove the 3rd item from an array?; cars.pop(2)
+How do we delete all the items in an array with the name "Tool"?; cars.remove("Tool")
+How to check if a variable is in a array?; var = ["apple","pear"]     if "apple" in var: print("Yes")
+How to check if a variable is NOT in an array?; var = ["apple","pear"]     if not "banana" in var: print("Yes")
+How do you add current date into script?; from datetime import date         today=date.today()   print(today)
+How to check if a word is in a string?; txt = "Hello world"   print("world" in txt)
+How to print part of a string?; x = "TIGER"    x[1:4] #IGE
+How to add different variables over time to a string?; var1 = 1   var2 = 3    print("There is {} item, not {}".format(var1,var2))
+How to make everything upper or lower case?; variable.upper()    "Text".lower()
+How do we remove spaces or special characters from a string?; variable.strip(" ")  " Text".lstrip(" ") vatiable.rstrip("$")
+How do we check how many times a word or substring appears?; variable.count("tree")
+How do we check if a string ends with a specific word?; variable.endswith("?")
+How do you concatenate strings?; var = ("Text " + "text") " ".join("word","car")
+How do you break string down?; "cars & dogs".split("&") 
+How do we use format function to display only interger or a string in 10 spaces (centred)?; var = ("How many {:d} are in {:^10s}".format(10.5, "Spain") will produce "How many 10 are in    Spain   .
+How do we add values in anywhere in a list using the Insert function?; variable.insert(0, "Oranges")
+How do we create a new typle from a list?; var = [10,11,12]  for index, value in enumerate(var): print("{} - {}".format(index+1,value)
+How do we create auto list from one line for function in list brackets?; values = [x*8 for x in range(1,11)]
+How do we sort values in a list?; variable.sort()   variable.reverse()
+How do we add another list to the back of current list?; variable.extend(other_list)
+How do we delete a key & string from a dict?; del variable["car"]
+How to print both the key and the string from a dict in a for string?; variable = {"house":1,"toy":2} for fake, take in variable.items(): print("Where {} is {}".format(fake, take)
+How do we merge two different dict?; dict.update(other_dict)
+How do we check what type of class/variable a variable has?; type(variable)
+How do we create a class?; class Apple: color = "red"   flavor = "sweet"
+How do we print a attribute of a class?; variable = Apple()   variable.color = "green"  print(variable.color))
+Why would you use a class? ; If you need a template of keys ready to use
+How to create Class with def inside?; class Horus: def speak(self): print("I am {} and {}".format(self.name,self.doing)
+How do we create a constructor in a class?; class Horus:  def __init__(self, name, time):  self.name = name   self.time = time  def __str__: return self.name
+How do we add docstrings to our class/variables etc; """This can be put above/below code to explain and make more understandable your code"""
