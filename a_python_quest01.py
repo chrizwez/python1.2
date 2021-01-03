@@ -102,12 +102,17 @@ def quiz_continue():   #Step 4 #continue with quiz
     #please = input("What?")
   elif x == "no" or x == "No" or x == "N" or x == "n":
     print("See you next time? ")
-    exit()
+    maximum = 0
+    return maximum
  
 def quiz_prep_random(quantity, maxim):   #Step 5
   random_num = []
   maxiz = int(maxim) - 2
   i = 0
+  if int(maxim) == 0:
+    quantity = 0
+    maxim = 0
+
   while i < int(quantity):
     y = round(random()*100)
     if not y in random_num:
@@ -154,6 +159,10 @@ def quiz_start(permission):
   total = len(permission)
   today = date.today()
   #print(today)
+  if int(maxim) == 0:
+    permission = ""
+    response = 1
+    total = 1
   i = 0
   while i < len(permission):
     print("\nThe next questions is:")
@@ -166,10 +175,11 @@ def quiz_start(permission):
     i += 1
   score = int(response/total*100)
   results = (str(today) + ": Your score is " + str(score) + "% out of " + str(total) + " questions\n")
-  print(results)
-  x = open("pythonquest_score.txt","a")
-  x.write(results)
-  x.close()
+  if int(maxim) != 0:
+    print(results)
+    x = open("pythonquest_score.txt","a")
+    x.write(results)
+    x.close()
   return results
 
 new_question(1)   #Step 1
@@ -183,7 +193,6 @@ quiz_bank = quiz_prep_load(var01[0], var01[1]) #Step 3
 quizzes = var01[0] #extract quizzes
 #print(quiz_bank)  #Full quiz Bank
 #dee = input("quizes printed?") #pause
-#
 maxim = quiz_continue() #Step 4
 #print(maxim) #number of questions
 #a = input("Maxim Stop?")
