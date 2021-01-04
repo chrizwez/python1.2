@@ -62,3 +62,4 @@ How do we show the current time/date/year?; import datetime   now = datetime.dat
 How do we see what date it would be in 20 days?; import datetime   now = datetime.datetime.now()   print(now + datetime.timedelta(days=28))
 How to create a wordcount graph?; from wordcloud import WordCloud   >  impor matplotlib.pyplot as plt   > text = open("text.txt","r").read()  >  wordcloud = WordCloud().generate(text)   > plt.imshow(wordcloud, interpolation='bilinear') > plt.axis("off") > plt.show()
 How do we scrape/pull in a webpage?; import requests  > URL = 'https://google.com'  > page = requests.get(URL)
+How do you extract info from websites based on ID's?; from bs4 import BeautifulSoup  > soup = BeautifulSoup(page.content,"html.parser") > header = soup.find(id="firstHeading") > print(header.text)
