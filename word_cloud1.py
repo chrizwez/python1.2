@@ -1,7 +1,8 @@
 from wordcloud import WordCloud
+
 import matplotlib.pyplot as plt
 
-text = open("pythonquest.txt", "r").read()
+text = open("webscrap.txt", "r").read()
 
 wordcloud = WordCloud().generate(text)
 

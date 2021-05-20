@@ -61,5 +61,11 @@ How do we import random and create a random number between 1 and 10000?; import 
 How do we show the current time/date/year?; import datetime   now = datetime.datetime.now()   print(now)   now.year   
 How do we see what date it would be in 20 days?; import datetime   now = datetime.datetime.now()   print(now + datetime.timedelta(days=28))
 How to create a wordcount graph?; from wordcloud import WordCloud   >  impor matplotlib.pyplot as plt   > text = open("text.txt","r").read()  >  wordcloud = WordCloud().generate(text)   > plt.imshow(wordcloud, interpolation='bilinear') > plt.axis("off") > plt.show()
-How do we scrape/pull in a webpage?; import requests  > URL = 'https://google.com'  > page = requests.get(URL)
+How do we scrape/pull in a webpage?; import requests  > URL = 'https://google.com'  > page = requests.get(URL) > print(page.text) > print(page.status_code)
 How do you extract info from websites based on ID's?; from bs4 import BeautifulSoup  > soup = BeautifulSoup(page.content,"html.parser") > header = soup.find(id="firstHeading") > print(header.text)
+How do we print only body/header/title of a website (scrape)?; import reqeusts | from bs4 import BeautifulSoup | page = requests.get(URL) | soup = BeautifulSoup(page.content, "html.parser") | title = soup.title.text | body = soup.body.text  | head = soup.head.text  | print(title, body, header)
+How do we extract all the h2 elements from a website?; import requests | from bs4 import BeautifulSoup | response. = requests.get(URL) soup = BeautifulSoup(response.content, ' html.parser') h2 = soup.select('h2')   OR for part in soup.select('h2'): h2section.append(part.text)
+What are some ways to navigate page with BeautifulSoup?; soup.title   |   soup.title.name   |  soup.title.string   | soup.title.parent.name   | soup.p   | soup.p['class']   | soup.a   | soup.find_all('a')  |  soup.find(id='link3')   | for link soup.find_all('a'): print(link.get('href')
+How do we print the "p" each or only some with BeautifulSoup?; p = soup.find_all('p')  |  for x in p: print(p[i])
+How do we print out links using BeautifulSoup?; part = soup.find_all('div')  |  for art in part: print(art) | for rt in art.find_all('a'): || print(rt.get('href')
+How do we see html in structured way (display)?; soup.prettify()

@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 url = "https://en.wikipedia.org/wiki/Inca_Empire"
 
+
 response = requests.get(url)
 
 print(response.status_code)
@@ -13,17 +14,28 @@ print(response.status_code)
 soup = BeautifulSoup(response.content, "html.parser")
 
 header = soup.find(id="firstHeading")
+q = input("all good? ")
+page1 = soup.find('div', class_='mw-content-ltr')
 
-body = soup.find_all(id='bodyContent')
+text = open("webscrap.txt", "w")
+text.write(page1.text)
+text.close()
 
-bodies = soup.find_all('h3',class_='mw-headline')
+title = soup.title.text
+print(title)
+
+
+#print(page1.text)
+#body = soup.find_all(id='bodyContent')
+
+#bodies = soup.find_all('h3',class_='mw-headline')
 sub = []
 #for bod in bodies:
 #  Subs = bod.find('h3', #class_='mw-headline')
 #  Subs = Subs#.text
 #  sub.append(Subs)
 
-print(bodies)
+#print(bodies)
 #a = input("ok")
 print(header.text)
 
